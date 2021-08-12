@@ -28,7 +28,7 @@ export default function Header() {
         <Container>
             <Logo>
                 <HeadsetTwoToneIcon className={classesIconPC.router} />
-                <p>Deazer do Lucas</p>
+                <p>Deazer do Lucas teste</p>
             </Logo>
 
 
