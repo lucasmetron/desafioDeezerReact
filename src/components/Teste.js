@@ -4,8 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 *{
     font-family: sans-serif;
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
 }
 `;
 
