@@ -1,7 +1,11 @@
 import React from 'react';
+import Search from '../Search/Search';
 
 export default function MostPlayed() {
     return (
-        <h1>Mais tocadas</h1>
+        <>
+            <Search />
+            <h1>Mais tocadas</h1>
+        </>
     );
 }

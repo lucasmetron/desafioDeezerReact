@@ -7,6 +7,7 @@ export const Container = styled.div`
     justify-content: space-between;
     padding: 1rem;
     gap: 0.2rem;
+    border-bottom: 1px solid #99989b34 ;
 
     p{
         font-size: 1.5rem;

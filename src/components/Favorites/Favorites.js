@@ -1,7 +1,11 @@
 import React from 'react';
+import Search from '../Search/Search';
 
 export default function Favorites() {
     return (
-        <h1>Musicas favoritas</h1>
+        <>
+            <Search />
+            <h1>Músicas Favoritas</h1>
+        </>
     );
 }

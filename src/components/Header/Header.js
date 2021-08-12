@@ -7,7 +7,7 @@ import {
     Logo,
     Teste
 
-} from './HeaderStyled'
+} from './styled'
 import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles(() => ({
@@ -28,7 +28,7 @@ export default function Header() {
         <Container>
             <Logo>
                 <HeadsetTwoToneIcon className={classesIconPC.router} />
-                <p>Deazer do Lucas teste</p>
+                <p>Deazer do Lucas</p>
             </Logo>
 
 
@@ -41,7 +41,6 @@ export default function Header() {
             <div>
                 <p>Sex, 13 Agosto</p>
             </div>
-
 
         </Container>
     );
