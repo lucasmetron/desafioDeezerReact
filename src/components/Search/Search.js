@@ -27,6 +27,7 @@ export default function Search() {
         <Container>
             <form className={classes.inputSearch} noValidate autoComplete="on">
                 <TextField id="standard-basic" label="Buscar" onChange={(event) => { setWordKey(event.target.value) }} />
+                teste
             </form>
         </Container>
 
