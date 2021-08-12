@@ -12,10 +12,34 @@ export const Container = styled.div`
         font-size: 1.5rem;
         color: #99989B;
     }
+
 `
 
 export const Logo = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+`;
+
+export const Options = styled.ul`
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    
+    *{
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+`;
+
+
+export const Teste = styled.li`
+    color: #99989B;
+    transition: all ease 0.5s;
+    list-style: none;
+    
+    &:hover{
+    color: #494949;
+    }
+
 `;

@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import HeadsetTwoToneIcon from '@material-ui/icons/HeadsetTwoTone';
 import {
     Container,
-    Logo
+    Options,
+    Logo,
+    Teste
+
 } from './HeaderStyled'
 import { Link } from 'react-router-dom';
 
@@ -28,12 +31,12 @@ export default function Header() {
                 <p>Deazer do Lucas</p>
             </Logo>
 
-            <div>
-                <ul>
-                    <li><Link to='/'>Mais tocadas</Link></li>
-                    <li><Link to='/musicas-favoritas'>Favoritos</Link></li>
-                </ul>
-            </div>
+
+            <Options>
+                <Link to='/'><Teste>Mais tocadas</Teste></Link>
+                <Link to='/musicas-favoritas'><Teste>Favoritos</Teste></Link>
+            </Options>
+
 
             <div>
                 <p>Sex, 13 Agosto</p>
