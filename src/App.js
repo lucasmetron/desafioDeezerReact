@@ -11,6 +11,7 @@ function App() {
       <Text>Teste</Text>
       <Text>Teste</Text>
       <Text>Teste</Text>
+      <Text>Teste</Text>
     </div>
   );
 }
