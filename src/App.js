@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Text>Teste</Text>
       <Text>Teste</Text>
+      <Text>Teste</Text>
     </div>
   );
 }
