@@ -24,8 +24,6 @@ function App() {
     <div>
       <GlobalStyle />
 
-
-
       <Router>
 
         <Header></Header>
