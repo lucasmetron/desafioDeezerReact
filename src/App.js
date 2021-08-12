@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Text>Teste</Text>
+      <Text>Teste</Text>
     </div>
   );
 }
