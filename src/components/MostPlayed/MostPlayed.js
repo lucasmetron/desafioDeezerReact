@@ -34,25 +34,21 @@ export default function MostPlayed(props) {
         await api
             .get('/radio/37151/tracks')
             .then(response => {
-                setMusics(response.data)
-                dispatch(addAllMusics(musics.data))
+                if (response) {
+                    setMusics(response.data)
+                    dispatch(addAllMusics(response.data.data))
+                    console.log(response.data)
+                } else {
+                    console.log('Não há resposta')
+                }
+
             })
             .catch(err => console.log(err))
 
     }
 
-    async function reqByFetch() {
-        await fetch('http://cors-anywhere.herokuapp.com/https://api.deezer.com').then(res => {
-            return res.json()
-        }).then(data => console.log(data))
-    }
-
     useEffect(() => {
         req();
-
-        console.log(allMusics)
-        console.log(musics)
-
     }, [])
 
 
