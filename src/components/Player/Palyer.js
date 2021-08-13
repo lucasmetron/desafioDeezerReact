@@ -1,7 +1,11 @@
 import React from 'react';
+import MusicList from '../MusicList/MusicList';
 
-export default function MostPlayed() {
+
+export default function MostPlayed(props) {
     return (
-        <h1>Player</h1>
+        <div>
+            Player
+        </div>
     );
 }

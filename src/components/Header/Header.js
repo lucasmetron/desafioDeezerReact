@@ -48,7 +48,7 @@ function getDate() {
 
 
 
-export default function Header() {
+export default function Header(props) {
 
     const classesIcon = useStyle();
 

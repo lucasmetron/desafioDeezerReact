@@ -21,4 +21,3 @@ export const Title = styled.h1`
     justify-content: center;
     gap: 0.2rem;
 `;
-
