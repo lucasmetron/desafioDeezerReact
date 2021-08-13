@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAllMusics } from '../../store/actions/musicsAction'
+import { start, finish } from '../../store/actions/isRequestAction'
 
 const useStyle = makeStyles(() => ({
     happy: {
@@ -26,18 +27,18 @@ export default function MostPlayed(props) {
 
     const classesIcon = useStyle();
     const dispatch = useDispatch()
-    const allMusics = useSelector(state => state)
-
+    const redux = useSelector(state => state)
     const [musics, setMusics] = useState([]);
 
     async function req() {
+        dispatch(start())
         await api
             .get('/radio/37151/tracks')
             .then(response => {
                 if (response) {
                     setMusics(response.data)
                     dispatch(addAllMusics(response.data.data))
-                    console.log(response.data)
+                    dispatch(finish())
                 } else {
                     console.log('Não há resposta')
                 }
@@ -51,7 +52,7 @@ export default function MostPlayed(props) {
         req();
     }, [])
 
-
+    console.log(redux)
 
     return (
 
