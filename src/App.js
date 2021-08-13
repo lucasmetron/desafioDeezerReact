@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MostPlayed from './components/MostPlayed/MostPlayed';
 import Favorites from './components/Favorites/Favorites';
+import Player from './components/Player/Palyer'
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -30,9 +31,11 @@ function App() {
           <Route path='*'>
             <h1>Página não encontrada /: </h1>
           </Route>
+
         </Switch>
 
       </Router>
+
 
     </div>
   );

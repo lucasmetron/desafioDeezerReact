@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 import MusicList from '../MusicList/MusicList';
 import Search from '../Search/Search';
 import {
@@ -23,17 +22,17 @@ export default function Favorites(props) {
 
     return (
         <>
-            <div className='overFlow' >
-                <Container>
-                    <Search />
 
-                    <Title>Seus Favoritos <FavoriteTwoToneIcon className={classesIcon.favorite} /> </Title>
+            <Container>
+                <Search />
 
-                    <MusicList></MusicList>
+                <Title>Seus Favoritos <FavoriteTwoToneIcon className={classesIcon.favorite} /> </Title>
 
-                </Container>
+                <MusicList></MusicList>
 
-            </div>
+            </Container>
+
+
         </>
 
 

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Search() {
+export default function Search(props) {
     const classes = useStyles();
     const [wordKey, setWordKey] = useState('');
 

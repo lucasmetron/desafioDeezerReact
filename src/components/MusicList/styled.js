@@ -39,14 +39,55 @@ export const MyTable = styled.table`
     }
   
     `;
-
-export const OverFlow = styled.table`
-    
+export const Container = styled.div`
     width: 100%;
-    height: 200px;
-    overflow:hidden;
-    background-color: orchid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+    justify-items: center;
+    *{
+        font-size: 2rem;
+    }
+   
+`;
 
+export const TitleList = styled.div`
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: rgb(164,126,246);
+    background: linear-gradient(90deg, rgba(164,126,246,1) 43%, rgba(118,76,209,1) 72%, rgba(72,45,134,1) 100%);
+`;
+
+export const List = styled.div`
+    width: 100%;
+    height: 75vh;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    overflow: auto;
+
+
+`;
+
+export const Item = styled.p`
+    transition: all ease .5s ;
+    cursor: pointer;
+    color: #99989B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background-color: #dcdbdc;
+        transform:scale(1.2)
+    }
 `;
 
 export const ThumbNail = styled.img`
