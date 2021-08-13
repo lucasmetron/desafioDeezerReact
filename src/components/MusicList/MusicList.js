@@ -13,17 +13,19 @@ import {
 } from './styled'
 
 import thumbtest from '../../assets/thumb.jpg'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 const useStyle = makeStyles(() => ({
     play: {
         color: '#07D365',
-        fontSize: 100,
+        fontSize: 40,
         marginRight: 10
     },
     pause: {
         color: '#07D365',
-        fontSize: 100,
+        fontSize: 40,
         marginRight: 10
     },
     favorite: {
@@ -243,6 +245,9 @@ const objTeste = [
 export default function MusicList(props) {
 
     const classesIcon = useStyle();
+    const allMusic = useSelector(state => state)
+
+    console.log(allMusic)
 
     return (
 

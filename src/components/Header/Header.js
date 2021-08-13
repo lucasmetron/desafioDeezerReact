@@ -10,6 +10,7 @@ import {
 } from './styled'
 import { Link } from 'react-router-dom';
 
+
 const useStyle = makeStyles(() => ({
     router: {
         color: '#7758CE',
@@ -47,11 +48,9 @@ function getDate() {
 }
 
 
-
 export default function Header(props) {
 
     const classesIcon = useStyle();
-
 
 
     return (
