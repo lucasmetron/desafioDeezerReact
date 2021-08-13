@@ -4,8 +4,11 @@ import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTw
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    MyTable,
-    ThumbNail
+    ThumbNail,
+    Container,
+    TitleList,
+    List,
+    Item,
 
 } from './styled'
 
@@ -14,21 +17,125 @@ import thumbtest from '../../assets/thumb.jpg'
 
 const useStyle = makeStyles(() => ({
     play: {
-        color: '#04D160',
+        color: '#07D365',
         fontSize: 100,
+        marginRight: 10
     },
     pause: {
-        color: '#04D160',
-        fontSize: 60,
+        color: '#07D365',
+        fontSize: 100,
+        marginRight: 10
     },
     favorite: {
         color: '#FE1B2D',
-        fontSize: 60,
+        fontSize: 40,
     }
 
 }))
 
+
 const objTeste = [
+    {
+        capa: 'Foto',
+        title: 'Me ajude a melhorar',
+        singer: 'Eli Soares',
+        duration: '3:50'
+    },
+    {
+        capa: 'Foto',
+        title: 'A mesa',
+        singer: 'Eli Soares',
+        duration: '4:15'
+    },
+    {
+        capa: 'Foto',
+        title: 'Deus está aqui',
+        singer: 'Eli Soares',
+        duration: '4:01'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    }, {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
+    {
+        capa: 'Foto',
+        title: 'Os anjos te Louvam',
+        singer: 'Eli Soares',
+        duration: '2:47'
+    },
     {
         capa: 'Foto',
         title: 'Me ajude a melhorar',
@@ -134,45 +241,44 @@ const objTeste = [
 
 
 export default function MusicList(props) {
-    const classesIconPlayer = useStyle();
+
+    const classesIcon = useStyle();
 
     return (
-        <MyTable>
 
-            <tr>
-                <th>Capa</th>
-                <th>Título</th>
-                <th>Cantor(a)</th>
-                <th>Duração</th>
-                <th></th>
-            </tr>
+        <Container>
 
+            <TitleList>
+                <h2>Capa</h2>
+                <h2>Titulos</h2>
+                <h2>Cantor(a)</h2>
+                <h2>Duração</h2>
+                <h2>Opções</h2>
+            </TitleList>
 
-            {objTeste !== undefined ?
-
-                objTeste.map((item, i) => {
+            <List>
+                {objTeste.map((item, i) => {
 
                     return (
-
-                        <tr key={i}>
-                            <td> <ThumbNail src={thumbtest} alt="" /></td>
-                            <td>{item.title}</td>
-                            <td>{item.singer}</td>
-                            <td>{item.duration}</td>
-                            <td><PlayArrowTwoToneIcon className={classesIconPlayer.play} /> <PauseCircleFilledTwoToneIcon className={classesIconPlayer.pause} /> <FavoriteTwoToneIcon className={classesIconPlayer.favorite} /> </td>
-                        </tr>
+                        <>
+                            <Item><ThumbNail src={thumbtest} /></Item>
+                            <Item>{item.title}</Item>
+                            <Item>{item.singer}</Item>
+                            <Item>{item.duration}</Item>
+                            <Item>
+                                <PlayArrowTwoToneIcon className={classesIcon.play} />
+                                <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
+                                <FavoriteTwoToneIcon className={classesIcon.favorite} />
+                            </Item>
+                        </>
                     )
 
-                })
-                :
 
-                <h1>Não há músicas</h1>
-            }
+                })}
+            </List>
 
 
-
-
-        </MyTable>
+        </Container>
 
     );
 }
