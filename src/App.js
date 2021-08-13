@@ -8,6 +8,7 @@ import { createGlobalStyle } from 'styled-components';
 import favoriteListReducer from './store/reducers/favoriteListreducer';
 import musicsReducer from './store/reducers/musicsReducer';
 import selectedMusicReducer from './store/reducers/selectedMusicReducer';
+import isRequestReducer from './store/reducers/isRequestReducer';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -31,6 +32,7 @@ function App() {
     allMusics: musicsReducer,
     favoritList: favoriteListReducer,
     selectedMusic: selectedMusicReducer,
+    isRequest: isRequestReducer,
   })
 
   const store = createStore(allReducers)

@@ -16,6 +16,7 @@ import thumbtest from '../../assets/thumb.jpg'
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Load from '../Loading/Load';
 
 
 const useStyle = makeStyles(() => ({
@@ -266,38 +267,47 @@ export default function MusicList(props) {
                 <h2>Opções</h2>
             </TitleList>
 
-            <List>
+            {redux.isrequest === true ?
 
-                {allMusic.length > 0 ?
+                <Load />
 
-                    allMusic.map((item, i) => {
+                :
 
-                        return (
-                            <>
+                <List>
 
+                    {allMusic.length > 0 ?
 
-                                <Item><ThumbNail src={item.album.cover_medium} /></Item>
-                                <Item>{item.title}</Item>
-                                <Item>{item.artist.name}</Item>
-                                <Item>{item.duration}</Item>
+                        allMusic.map((item, i) => {
 
-                                <Item>
-                                    <PlayArrowTwoToneIcon className={classesIcon.play} />
-                                    <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
-                                    <FavoriteTwoToneIcon className={classesIcon.favorite} />
-                                </Item>
-                            </>
-                        )
+                            return (
+                                <>
 
 
-                    })
+                                    <Item><ThumbNail src={item.album.cover_medium} /></Item>
+                                    <Item id={item.id}>{item.title}</Item>
+                                    <Item>{item.artist.name}</Item>
+                                    <Item>{item.duration}</Item>
 
-                    :
+                                    <Item>
+                                        <PlayArrowTwoToneIcon className={classesIcon.play} />
+                                        <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
+                                        <FavoriteTwoToneIcon className={classesIcon.favorite} />
+                                    </Item>
+                                </>
+                            )
 
-                    < div > Requisição não chegou</div>
-                }
 
-            </List>
+                        })
+
+                        :
+
+                        < div > Requisição não chegou</div>
+                    }
+
+                </List>
+            }
+
+
 
 
         </Container >
