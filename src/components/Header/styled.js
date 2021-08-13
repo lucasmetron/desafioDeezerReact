@@ -5,7 +5,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     gap: 0.2rem;
     border-bottom: 1px solid #99989b34 ;
 
@@ -40,7 +43,7 @@ export const Teste = styled.li`
     list-style: none;
     
     &:hover{
-    color: #494949;
+    color: #04CD61;
     }
 
 `;
