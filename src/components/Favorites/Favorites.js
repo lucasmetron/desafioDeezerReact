@@ -1,5 +1,5 @@
 import React from 'react';
-import MusicList from '../MusicList/MusicList';
+import MusicFavoriteList from '../MusicFavoriteList/MusicFavoriteList';
 import Search from '../Search/Search';
 import {
     Container,
@@ -28,7 +28,7 @@ export default function Favorites(props) {
 
                 <Title>Seus Favoritos <FavoriteTwoToneIcon className={classesIcon.favorite} /> </Title>
 
-                <MusicList></MusicList>
+                <MusicFavoriteList></MusicFavoriteList>
 
             </Container>
 

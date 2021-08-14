@@ -10,13 +10,16 @@ import {
     List,
     Item,
     Erro,
+    Listcontainer,
 } from './styled'
 
 import thumbtest from '../../assets/thumb.jpg'
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Load from '../Loading/Load';
+import { addFavoriteList } from '../../store/actions/favoriteListActions'
+import { createRef } from 'react';
 
 
 const useStyle = makeStyles(() => ({
@@ -244,16 +247,40 @@ const objTeste = [
 ]
 
 
+
 export default function MusicList(props) {
 
     const classesIcon = useStyle();
     const redux = useSelector(state => state)
     const allMusic = useSelector(state => state.allMusics) || { erro: "Não chegou nada" }
+    const dispatch = useDispatch()
+    const [musicPlay, setMusicPlay] = useState('')
 
 
     useEffect(() => {
+
+    }, [redux])
+
+
+    function addFavoriteList(music) {
+        localStorage.setItem('favoriteList', JSON.stringify(music))
+
+        console.log(music)
         console.log(redux)
-    }, [allMusic])
+    }
+
+    function play(item) {
+        setMusicPlay(item)
+        console.log(musicPlay)
+
+    }
+
+    function pause(item) {
+        setMusicPlay(item)
+        console.log(musicPlay)
+
+    }
+
 
     return (
 
@@ -267,33 +294,33 @@ export default function MusicList(props) {
                 <h2>Opções</h2>
             </TitleList>
 
+
+
             {redux.isrequest === true ?
 
                 <Load />
 
                 :
 
-                <List>
+                <Listcontainer>
 
                     {allMusic.length > 0 ?
 
-                        allMusic.map((item, i) => {
+                        allMusic.map((item) => {
 
                             return (
-                                <>
-
-
+                                <List>
                                     <Item><ThumbNail src={item.album.cover_medium} /></Item>
-                                    <Item id={item.id}>{item.title}</Item>
+                                    <Item id={item.id}> <a href="google.com.br"></a>{item.title}</Item>
                                     <Item>{item.artist.name}</Item>
                                     <Item>{item.duration}</Item>
 
                                     <Item>
-                                        <PlayArrowTwoToneIcon className={classesIcon.play} />
-                                        <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
-                                        <FavoriteTwoToneIcon className={classesIcon.favorite} />
+                                        <PlayArrowTwoToneIcon className={classesIcon.play} onClick={(() => { play(item) })} />
+                                        <PauseCircleFilledTwoToneIcon className={classesIcon.pause} onClick={(() => { pause(item) })} />
+                                        <FavoriteTwoToneIcon className={classesIcon.favorite} onClick={(() => { addFavoriteList(item) })} />
                                     </Item>
-                                </>
+                                </List>
                             )
 
 
@@ -305,11 +332,8 @@ export default function MusicList(props) {
 
                     }
 
-                </List>
+                </Listcontainer>
             }
-
-
-
 
         </Container >
 
