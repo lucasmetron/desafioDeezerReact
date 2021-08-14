@@ -42,7 +42,7 @@ function App() {
     <div>
       <GlobalStyle />
 
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Provider store={store}>
           <Header></Header>
 
