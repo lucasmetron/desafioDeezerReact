@@ -94,3 +94,9 @@ export const ThumbNail = styled.img`
     width: 50px;
     border-radius: 50%;
 `;
+
+export const Erro = styled.h1`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`;
