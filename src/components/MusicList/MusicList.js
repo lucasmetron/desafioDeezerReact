@@ -9,7 +9,7 @@ import {
     TitleList,
     List,
     Item,
-
+    Erro,
 } from './styled'
 
 import thumbtest from '../../assets/thumb.jpg'
@@ -301,7 +301,8 @@ export default function MusicList(props) {
 
                         :
 
-                        < div > Requisição não chegou</div>
+                        <Erro > Erro 404 :/</Erro>
+
                     }
 
                 </List>
