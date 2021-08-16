@@ -1143,7 +1143,7 @@ export default function MusicList(props) {
                             return (
                                 <List id={item.id} onClick={(() => { saveSelectedMusic(item) })}>
                                     <Item><ThumbNail src={item.album.cover_medium} /></Item>
-                                    <Item id={item.id}> <a href="google.com.br"></a>{item.title}</Item>
+                                    <Item id={item.id}>{item.title}</Item>
                                     <Item>{item.artist.name}</Item>
                                     <Item>{convertSecToMin(item.duration)}</Item>
 
