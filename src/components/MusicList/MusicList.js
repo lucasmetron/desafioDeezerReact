@@ -2,6 +2,7 @@ import React from 'react'
 import PlayArrowTwoToneIcon from '@material-ui/icons/PlayArrowTwoTone';
 import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
+import LinkIcon from '@material-ui/icons/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     ThumbNail,
@@ -20,8 +21,9 @@ import { useEffect } from 'react';
 import Load from '../Loading/Load';
 import { addFavoriteList, removeFavoriteList } from '../../store/actions/favoriteListActions'
 import { selectedMusic } from '../../store/actions/selectedMusic'
-
+import Message from '../Message/Message';
 import { createRef } from 'react';
+
 
 const useStyle = makeStyles(() => ({
     play: {
@@ -37,9 +39,15 @@ const useStyle = makeStyles(() => ({
     favorite: {
         color: '#FE1B2D',
         fontSize: 40,
+        marginRight: 10
+    },
+    link: {
+        color: '#07D365',
+        fontSize: 40,
     }
 
 }))
+
 
 const objTeste = [
     {
@@ -1048,25 +1056,30 @@ const objTeste = [
 export default function MusicList(props) {
 
     const classesIcon = useStyle();
-    const redux = useSelector(state => state)
-    const allMusic = useSelector(state => state.allMusics) || { erro: "Não chegou nada" }
-    const dispatch = useDispatch()
-    const [musicPlay, setMusicPlay] = useState('')
+    const redux = useSelector(state => state);
+    const allMusic = useSelector(state => state.allMusics) || { erro: "Não chegou nada" };
+    const dispatch = useDispatch();
+    const [musicPlay, setMusicPlay] = useState('');
+    const [urlMusic, setUrlMusic] = useState('');
+    const [alert, setAlert] = useState('none');
 
 
     useEffect(() => {
-        if (redux.favoriteList !== undefined) {
-            console.log(redux.favoriteList)
-            localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
-        } else {
-            console.log('faço nada')
+
+        if (redux.favoritList !== []) {
+            // localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
+            // console.log(redux)
         }
 
     }, [redux])
 
 
     function addFavoriteListOnRedux(music) {
+        localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
         dispatch(addFavoriteList(music))
+        setAlert('flex')
+
+        setTimeout(() => { setAlert('none') }, 1000)
         console.log(redux)
     }
 
@@ -1075,17 +1088,16 @@ export default function MusicList(props) {
     }
 
     function play(item) {
-        setMusicPlay(item)
-        console.log('play clicado')
+        setUrlMusic(item.preview)
+        console.log(item.preview)
 
     }
 
     function pause(item) {
-        setMusicPlay(item)
+        setUrlMusic('')
         console.log('pause clicado')
 
     }
-
 
     function saveSelectedMusic(item) {
         dispatch(selectedMusic(item))
@@ -1101,6 +1113,10 @@ export default function MusicList(props) {
     return (
 
         <Container>
+
+            <div  > {urlMusic !== '' ? <audio src={urlMusic} autoPlay loop controls ></audio> : ''} </div>
+
+            <Message alert={alert} />
 
             <TitleList>
                 <h2>Capa</h2>
@@ -1132,9 +1148,11 @@ export default function MusicList(props) {
                                     <Item>{convertSecToMin(item.duration)}</Item>
 
                                     <Item>
+
                                         <PlayArrowTwoToneIcon className={classesIcon.play} onClick={(() => { play(item) })} />
                                         <PauseCircleFilledTwoToneIcon className={classesIcon.pause} onClick={(() => { pause(item) })} />
                                         <FavoriteTwoToneIcon className={classesIcon.favorite} onClick={(() => { addFavoriteListOnRedux(item) })} />
+                                        <a href={item.link} target="_black" ><LinkIcon className={classesIcon.link} /></a>
                                     </Item>
                                 </List>
                             )
