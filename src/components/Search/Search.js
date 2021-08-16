@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { addAllMusics } from '../../store/actions/musicsAction';
 
 const useStyles = makeStyles((theme) => ({
     inputSearch: {
@@ -1039,19 +1040,23 @@ export default function Search(props) {
             return musica.title.toLowerCase().includes(wordKey.toLowerCase())
         })
 
+        dispatch(addAllMusics(FilterList))
+
 
         console.log(FilterList)
         console.log(redux)
     }
 
     return (
-        <Container>
+
+        < Container >
+            {console.log(redux)}
             <form className={classes.inputSearch} noValidate autoComplete="on">
                 <TextField id="standard-basic" label="Buscar" onChange={handleChange} />
                 {/* <input type="text" value={busca} onChange={(event) => setBusca(event.target.value)} /> */}
 
             </form>
-        </Container>
+        </Container >
 
     );
 }
