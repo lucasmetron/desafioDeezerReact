@@ -47,7 +47,7 @@ export const Container = styled.div`
     align-content: center;
     justify-items: center;
     *{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
    
 `;
@@ -58,36 +58,45 @@ export const TitleList = styled.div`
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background: rgb(164,126,246);
     background: linear-gradient(90deg, rgba(164,126,246,1) 43%, rgba(118,76,209,1) 72%, rgba(72,45,134,1) 100%);
 `;
 
+export const Listcontainer = styled.div`
+    width: 100%;
+    height: 65vh;
+    overflow: auto;
+`;
+
 export const List = styled.div`
     width: 100%;
-    height: 75vh;
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1rem;
-    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     overflow: auto;
 
-
+    transition: all ease .5s ;
+    &:hover{
+        background-color: #dcdbdc;
+        transform: scale(1.01);
+    }
 `;
 
+
+
 export const Item = styled.p`
-    transition: all ease .5s ;
     cursor: pointer;
     color: #99989B;
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover{
-        background-color: #dcdbdc;
-        transform:scale(1.2)
-    }
+
+   
 `;
 
 export const ThumbNail = styled.img`

@@ -10,12 +10,14 @@ import {
     List,
     Item,
     Erro,
+    Listcontainer,
 } from './styled'
 
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Load from '../Loading/Load';
+import { addFavoriteList, removeFavoriteList } from '../../store/actions/favoriteListActions'
 
 
 const useStyle = makeStyles(() => ({
@@ -42,12 +44,45 @@ export default function MusicFavoriteList(props) {
 
     const classesIcon = useStyle();
     const redux = useSelector(state => state)
-    const allMusic = useSelector(state => state.allMusics) || { erro: "Não chegou nada" }
+    const [favoritList, setFavoriteList] = useState([]);
+    const dispatch = useDispatch();
 
+    function removeMusicOnFavorite(id) {
+
+        dispatch(removeFavoriteList(id))
+        console.log(id)
+        console.log(redux)
+    }
+
+    function convertSecToMin(time) {
+        let seconds = (time / 60).toFixed(2);
+        let result = seconds.split(".")
+        return `${result[0]}:${result[1]}`
+    }
 
     useEffect(() => {
-        console.log(redux)
-    }, [allMusic])
+        let list = JSON.parse(localStorage.getItem('favoriteList'))
+        if (redux.favoritList.length < 0 && list.length > 0) {
+            list.map((item) => {
+                dispatch(addFavoriteList(item))
+            })
+            console.log(redux)
+            console.log('cai no if')
+
+        } else {
+
+            console.log('local storage vazia')
+        }
+
+        setFavoriteList(redux.favoritList)
+    }, [])
+
+    useEffect(() => {
+        setFavoriteList(redux.favoritList)
+    }, [redux])
+
+
+    console.log(redux)
 
     return (
 
@@ -67,26 +102,28 @@ export default function MusicFavoriteList(props) {
 
                 :
 
-                <List>
+                <Listcontainer>
 
-                    {allMusic.length > 0 ?
+                    {favoritList.length > 0 ?
 
-                        allMusic.map((item, i) => {
+                        favoritList.map((item, i) => {
+
 
                             return (
                                 <>
+                                    <List>
 
+                                        <Item><ThumbNail src={item.album.cover_medium} /></Item>
+                                        <Item id={item.id}>{item.title}</Item>
+                                        <Item>{item.artist.name}</Item>
+                                        <Item>{convertSecToMin(item.duration)}</Item>
 
-                                    <Item><ThumbNail src={item.album.cover_medium} /></Item>
-                                    <Item id={item.id}>{item.title}</Item>
-                                    <Item>{item.artist.name}</Item>
-                                    <Item>{item.duration}</Item>
-
-                                    <Item>
-                                        <PlayArrowTwoToneIcon className={classesIcon.play} />
-                                        <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
-                                        <DeleteForeverTwoToneIcon className={classesIcon.delete} />
-                                    </Item>
+                                        <Item>
+                                            <PlayArrowTwoToneIcon className={classesIcon.play} />
+                                            <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
+                                            <DeleteForeverTwoToneIcon className={classesIcon.delete} onClick={(() => { removeMusicOnFavorite(item.id) })} />
+                                        </Item>
+                                    </List>
                                 </>
                             )
 
@@ -95,11 +132,11 @@ export default function MusicFavoriteList(props) {
 
                         :
 
-                        <Erro > Erro 404 :/</Erro>
+                        <Erro > Lista de musicas favoritas vazia.</Erro>
 
                     }
 
-                </List>
+                </Listcontainer>
             }
 
 

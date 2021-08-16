@@ -52,7 +52,6 @@ export default function MostPlayed(props) {
         req();
     }, [])
 
-    console.log(redux)
 
     return (
 

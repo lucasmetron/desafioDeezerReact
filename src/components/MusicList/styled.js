@@ -88,7 +88,6 @@ export const List = styled.div`
 `;
 
 
-
 export const Item = styled.p`
     cursor: pointer;
     color: #99989B;
