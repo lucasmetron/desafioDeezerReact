@@ -1114,7 +1114,7 @@ export default function MusicList(props) {
 
         <Container>
 
-            <div  > {urlMusic !== '' ? <audio src={urlMusic} autoPlay loop controls ></audio> : ''} </div>
+            <div style={{ marginBottom: 10 }} > {urlMusic !== '' ? <audio src={urlMusic} autoPlay loop controls ></audio> : ''} </div>
 
             <Message alert={alert} />
 
