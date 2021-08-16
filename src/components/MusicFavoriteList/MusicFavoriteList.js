@@ -2,6 +2,7 @@ import React from 'react'
 import PlayArrowTwoToneIcon from '@material-ui/icons/PlayArrowTwoTone';
 import PauseCircleFilledTwoToneIcon from '@material-ui/icons/PauseCircleFilledTwoTone';
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
+import LinkIcon from '@material-ui/icons/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     ThumbNail,
@@ -12,7 +13,7 @@ import {
     Erro,
     Listcontainer,
 } from './styled'
-
+import Message from '../Message/Message';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -34,6 +35,11 @@ const useStyle = makeStyles(() => ({
     delete: {
         color: '#FE1B2D',
         fontSize: 40,
+        marginRight: 10,
+    },
+    link: {
+        color: '#07D365',
+        fontSize: 40,
     }
 
 }))
@@ -44,14 +50,32 @@ export default function MusicFavoriteList(props) {
 
     const classesIcon = useStyle();
     const redux = useSelector(state => state)
-    const [favoritList, setFavoriteList] = useState([]);
+    const [favoritList, setFavoriteList] = useState('');
     const dispatch = useDispatch();
+    const [listLocal, setListLocal] = useState('');
+    const [urlMusic, setUrlMusic] = useState('')
+    const [alert, setAlert] = useState('none');
 
     function removeMusicOnFavorite(id) {
 
         dispatch(removeFavoriteList(id))
+        setUrlMusic('')
+        setAlert('flex')
+        setTimeout(() => { setAlert('none') }, 1000)
         console.log(id)
         console.log(redux)
+    }
+
+    function play(item) {
+        setUrlMusic(item.preview)
+        console.log(item.preview)
+
+    }
+
+    function pause(item) {
+        setUrlMusic('')
+        console.log('pause clicado')
+
     }
 
     function convertSecToMin(time) {
@@ -61,20 +85,15 @@ export default function MusicFavoriteList(props) {
     }
 
     useEffect(() => {
-        let list = JSON.parse(localStorage.getItem('favoriteList'))
-        if (redux.favoritList.length < 0 && list.length > 0) {
-            list.map((item) => {
-                dispatch(addFavoriteList(item))
-            })
-            console.log(redux)
-            console.log('cai no if')
+        // setFavoriteList(redux.favoritList)
+        // if (redux.favoritList.length <= 0 && localStorage.getItem('favoriteList') !== null) {
+        //     dispatch(addFavoriteList(JSON.parse(localStorage.getItem('favoriteList'))))
+        // }
 
-        } else {
+        // console.log(redux.favoritList.length)
+        // console.log(localStorage.getItem('favoriteList'))
+        // console.log(redux)
 
-            console.log('local storage vazia')
-        }
-
-        setFavoriteList(redux.favoritList)
     }, [])
 
     useEffect(() => {
@@ -82,11 +101,13 @@ export default function MusicFavoriteList(props) {
     }, [redux])
 
 
-    console.log(redux)
 
     return (
 
         <Container>
+
+            <div style={{ marginBottom: 10 }} > {urlMusic !== '' ? <audio src={urlMusic} autoPlay loop controls ></audio> : ''} </div>
+            <Message alert={alert} />
 
             <TitleList>
                 <h2>Capa</h2>
@@ -119,9 +140,10 @@ export default function MusicFavoriteList(props) {
                                         <Item>{convertSecToMin(item.duration)}</Item>
 
                                         <Item>
-                                            <PlayArrowTwoToneIcon className={classesIcon.play} />
-                                            <PauseCircleFilledTwoToneIcon className={classesIcon.pause} />
+                                            <PlayArrowTwoToneIcon className={classesIcon.play} onClick={(() => { play(item) })} />
+                                            <PauseCircleFilledTwoToneIcon className={classesIcon.pause} onClick={(() => { pause(item) })} />
                                             <DeleteForeverTwoToneIcon className={classesIcon.delete} onClick={(() => { removeMusicOnFavorite(item.id) })} />
+                                            <a href={item.link} target="_black" ><LinkIcon className={classesIcon.link} /></a>
                                         </Item>
                                     </List>
                                 </>

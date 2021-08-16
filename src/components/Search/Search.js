@@ -25,9 +25,6 @@ export default function Search(props) {
         setWordKey(event.target.value)
     }
 
-
-
-    console.log(wordKey)
     return (
         <Container>
             <form className={classes.inputSearch} noValidate autoComplete="on">

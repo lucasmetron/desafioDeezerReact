@@ -1,7 +1,7 @@
 export const addFavoriteList = (value) => {
     return {
         type: 'ADDFAVORITEMUSIC',
-        payload: value || {}
+        payload: value
     }
 }
 

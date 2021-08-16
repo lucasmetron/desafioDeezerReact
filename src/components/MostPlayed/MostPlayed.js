@@ -50,6 +50,7 @@ export default function MostPlayed(props) {
 
     useEffect(() => {
         req();
+        console.log(redux)
     }, [])
 
 
