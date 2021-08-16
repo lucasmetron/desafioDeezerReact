@@ -1033,26 +1033,20 @@ export default function Search(props) {
 
     function handleChange(event) {
         setWordKey(event.target.value)
-        let copy = [...redux]
-
         let FilterList = objTeste.filter(musica => {
-            console.log(wordKey)
             return musica.title.toLowerCase().includes(wordKey.toLowerCase())
         })
-
         dispatch(addAllMusics(FilterList))
 
-
-        console.log(FilterList)
-        console.log(redux)
+        // console.log(FilterList)
+        // console.log(redux)
     }
 
     return (
 
         < Container >
-            {console.log(redux)}
             <form className={classes.inputSearch} noValidate autoComplete="on">
-                <TextField id="standard-basic" label="Buscar" onChange={handleChange} />
+                <TextField id="standard-basic" label="Buscar" onChange={handleChange} value={wordKey} />
                 {/* <input type="text" value={busca} onChange={(event) => setBusca(event.target.value)} /> */}
 
             </form>

@@ -1136,9 +1136,9 @@ export default function MusicList(props) {
 
                 <Listcontainer>
 
-                    {allMusic.length > 0 ?
+                    {objTeste.length > 0 ?
 
-                        allMusic.map((item) => {
+                        objTeste.map((item) => {
 
                             return (
                                 <List id={item.id} onClick={(() => { saveSelectedMusic(item) })}>
