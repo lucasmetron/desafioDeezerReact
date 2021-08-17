@@ -167,8 +167,12 @@ export default function MusicList(props) {
                         })
 
                         :
+                        <div>
+                            <Erro > Lista vazia :/</Erro>
+                            <Erro>Acesse o link a seguir para ativar serviço da API de CORS: http://cors-anywhere.herokuapp.com/corsdemo</Erro>
+                        </div>
 
-                        <Erro > Lista vazia :/</Erro>
+
 
                     }
 
