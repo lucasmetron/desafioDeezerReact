@@ -20,7 +20,7 @@
 
 
 ### Demonstração da aplicação
-![Tela inicial](./assets/gifs/show2.gif)
+![Tela inicial](./src/assets/projeto.gif)
 
 
 ### Como visualizar aplicação em sua máquina:
