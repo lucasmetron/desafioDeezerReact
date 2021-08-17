@@ -24,22 +24,22 @@ import { addFavoriteList, removeFavoriteList } from '../../store/actions/favorit
 const useStyle = makeStyles(() => ({
     play: {
         color: '#07D365',
-        fontSize: 40,
+        fontSize: 20,
         marginRight: 10
     },
     pause: {
         color: '#07D365',
-        fontSize: 40,
+        fontSize: 20,
         marginRight: 10
     },
     delete: {
         color: '#FE1B2D',
-        fontSize: 40,
+        fontSize: 20,
         marginRight: 10,
     },
     link: {
         color: '#07D365',
-        fontSize: 40,
+        fontSize: 20,
     }
 
 }))

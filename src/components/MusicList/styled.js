@@ -46,10 +46,9 @@ export const Container = styled.div`
     grid-template-rows: 1fr;
     align-content: center;
     justify-items: center;
-    *{
-        font-size: 1.8rem;
-    }
-   
+    
+
+  
 `;
 
 export const TitleList = styled.div`
@@ -68,6 +67,7 @@ export const Listcontainer = styled.div`
     width: 100%;
     height: 65vh;
     overflow: auto;
+    
 `;
 
 export const List = styled.div`
@@ -79,7 +79,7 @@ export const List = styled.div`
     padding-top: 1rem;
     padding-bottom: 1rem;
     overflow: auto;
-
+    
     transition: all ease .5s ;
     &:hover{
         background-color: #dcdbdc;
@@ -94,8 +94,11 @@ export const Item = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.8rem;
 
-   
+    @media(max-width: 800px) {
+      font-size: 1.2rem;
+  }
 `;
 
 export const ThumbNail = styled.img`

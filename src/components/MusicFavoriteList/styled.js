@@ -46,9 +46,7 @@ export const Container = styled.div`
     grid-template-rows: 1fr;
     align-content: center;
     justify-items: center;
-    *{
-        font-size: 1.8rem;
-    }
+  
    
 `;
 
@@ -95,7 +93,11 @@ export const Item = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.8rem;
 
+    @media(max-width: 800px) {
+  font-size: 1.2rem;
+}
    
 `;
 

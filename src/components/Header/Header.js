@@ -9,6 +9,7 @@ import {
 
 } from './styled'
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.svg'
 
 
 const useStyle = makeStyles(() => ({
@@ -57,7 +58,6 @@ export default function Header(props) {
         <Container>
             <Logo>
                 <HeadsetTwoToneIcon className={classesIcon.router} />
-                <p>Deezer do Lucas</p>
             </Logo>
 
 

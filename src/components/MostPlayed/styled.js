@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 
+
 export const Container = styled.div`
 
     padding: 0.8rem;
@@ -20,5 +21,9 @@ export const Title = styled.h1`
     align-items: center;
     justify-content: center;
     gap: 0.2rem;
+
+    @media(max-width: 800px) {
+      font-size: 3rem;
+  }
 `;
 

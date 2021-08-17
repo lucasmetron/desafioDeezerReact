@@ -24,7 +24,6 @@ export default function Favorites(props) {
         <>
 
             <Container>
-                <Search />
 
                 <Title>Seus Favoritos <FavoriteTwoToneIcon className={classesIcon.favorite} /> </Title>
 
