@@ -60,6 +60,10 @@ export const TitleList = styled.div`
     padding-bottom: 1rem;
     background: rgb(164,126,246);
     background: linear-gradient(90deg, rgba(164,126,246,1) 43%, rgba(118,76,209,1) 72%, rgba(72,45,134,1) 100%);
+        h2{
+            font-size: 1.8rem;
+        }
+
 `;
 
 export const Listcontainer = styled.div`
@@ -110,4 +114,8 @@ export const Erro = styled.h1`
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: 1.8rem;
+    a{
+        font-size: 1.8rem;
+    }
 `;

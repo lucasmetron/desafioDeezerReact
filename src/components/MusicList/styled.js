@@ -74,4 +74,5 @@ export const Erro = styled.h1`
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: 1.8rem;
 `;

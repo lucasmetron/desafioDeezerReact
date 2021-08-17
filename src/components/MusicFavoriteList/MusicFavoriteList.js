@@ -68,14 +68,11 @@ export default function MusicFavoriteList(props) {
 
     function play(item) {
         setUrlMusic(item.preview)
-        console.log(item.preview)
 
     }
 
     function pause(item) {
         setUrlMusic('')
-        console.log('pause clicado')
-
     }
 
     function convertSecToMin(time) {
@@ -90,15 +87,11 @@ export default function MusicFavoriteList(props) {
             local.map(item => {
                 dispatch(addFavoriteList(item))
             })
-
-
-            console.log(local)
         }
     }, [])
 
     useEffect(() => {
         setFavoriteList(redux.favoritList)
-        console.log(redux)
     }, [redux])
 
 

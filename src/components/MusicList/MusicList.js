@@ -63,13 +63,6 @@ export default function MusicList(props) {
 
     useEffect(() => {
 
-        if (redux.favoritList !== []) {
-            // localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
-            // console.log(redux)
-        }
-
-
-
         console.log(redux)
 
     }, [redux])
@@ -105,7 +98,6 @@ export default function MusicList(props) {
 
     function saveSelectedMusic(item) {
         dispatch(selectedMusic(item))
-        // console.log(redux)
     }
 
     function convertSecToMin(time) {
@@ -114,7 +106,6 @@ export default function MusicList(props) {
         return `${result[0]}:${result[1]}`
     }
 
-    console.log(props.coisa)
 
     return (
 
@@ -169,7 +160,8 @@ export default function MusicList(props) {
                         :
                         <div>
                             <Erro > Lista vazia :/</Erro>
-                            <Erro>Acesse o link a seguir para ativar serviço da API de CORS: http://cors-anywhere.herokuapp.com/corsdemo</Erro>
+                            <Erro>Acesse o link a seguir para ativar serviço da API de CORS: </Erro>
+                            <Erro><a href='http://cors-anywhere.herokuapp.com/corsdemo' target='_blank'> Acesse</a></Erro>
                         </div>
 
 

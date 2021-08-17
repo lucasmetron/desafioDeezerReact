@@ -1031,20 +1031,6 @@ export default function Search(props) {
     const dispatch = useDispatch();
     const redux = useSelector(state => state.allMusics)
     const [wordKey, setWordKey] = useState('')
-    const [copy, setCopy] = useState([''])
-    const teste = 'teste'
-
-    const [musicsFilter, setMusicsFilter] = useState([]);
-
-    // useEffect(() => {
-
-    //     setMusicsFilter(redux.filter(musica => {
-    //         return musica.title.toLowerCase().includes(wordKey.toLocaleLowerCase())
-    //     }))
-
-    //     console.log(wordKey)
-
-    // }, [wordKey])
 
 
     function handleChange(event) {
@@ -1073,8 +1059,6 @@ export default function Search(props) {
         < Container filter>
             <form className={classes.inputSearch} noValidate autoComplete="on">
                 <TextField id="standard-basic" label="Buscar" onChange={handleChange} value={wordKey} />
-                {/* <input type="text" value={busca} onChange={(event) => setBusca(event.target.value)} /> */}
-                {/* <MusicList list={musicsFilter} ></MusicList> */}
             </form>
         </Container >
 
