@@ -47,7 +47,6 @@ export default function MostPlayed(props) {
                     console.log('Não há resposta')
                 }
 
-
             })
             .catch(err => console.log(err))
 
