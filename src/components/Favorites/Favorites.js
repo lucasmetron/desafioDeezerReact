@@ -1,6 +1,5 @@
 import React from 'react';
 import MusicFavoriteList from '../MusicFavoriteList/MusicFavoriteList';
-import Search from '../Search/Search';
 import {
     Container,
     Title,

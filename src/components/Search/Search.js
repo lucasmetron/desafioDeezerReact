@@ -1037,7 +1037,6 @@ export default function Search(props) {
         setWordKey(event.target.value)
     }
 
-    console.log(wordKey)
 
     useEffect(() => {
         let FilterList = redux.filter(musica => {
@@ -1048,7 +1047,6 @@ export default function Search(props) {
         if (wordKey == '') {
             let oldList = JSON.parse(localStorage.getItem('allMusics'))
             dispatch(addAllMusics(oldList))
-            console.log('entrei no if')
 
         }
 

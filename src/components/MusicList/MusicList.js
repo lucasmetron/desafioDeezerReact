@@ -76,7 +76,6 @@ export default function MusicList(props) {
 
     async function saveLocal() {
         if (redux.favoritList !== '') {
-            console.log(redux.favoritList.length === [''])
             await localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
         }
 
@@ -86,13 +85,12 @@ export default function MusicList(props) {
 
     function play(item) {
         setUrlMusic(item.preview)
-        console.log(item.preview)
+
 
     }
 
     function pause(item) {
         setUrlMusic('')
-        console.log('pause clicado')
 
     }
 
