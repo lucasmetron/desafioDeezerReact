@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAllMusics } from '../../store/actions/musicsAction'
 import { start, finish } from '../../store/actions/isRequestAction'
+import logoLucas from '../../assets/logo.svg'
 
 
 const useStyle = makeStyles(() => ({
@@ -66,6 +67,7 @@ export default function MostPlayed(props) {
             <Search />
             <Title>Mais Tocadas <InsertEmoticonTwoToneIcon className={classesIcon.happy} /></Title>
             <MusicList />
+            <img src={logoLucas} alt="Logo Lucas" style={{ width: '30rem', marginTop: '1rem' }} />
 
         </Container>
 
