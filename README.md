@@ -26,7 +26,7 @@
 ### Como visualizar aplicação em sua máquina:
 
 #### 1º Passo: Instale o git, veja o passo a passo em https://git-scm.com/downloads
-#### 2º Passo: Intale o node, veja o passo a passo em https://nodejs.org/en/download/
+#### 2º Passo: Instale o node, veja o passo a passo em https://nodejs.org/en/download/
 #### 3º Passo: Abra o terminal como administrador e execute o comando: ' git clone https://github.com/lucasmetron/desafioDeezerReact.git '
 #### 4º Passo: Digite o comando ' cd desafioDeezerReact ' para acessar a pasta do projeto
 #### 5º Passo: Digite o comando ' npm install ' e ao finalizar digite o comando ' npm start '
