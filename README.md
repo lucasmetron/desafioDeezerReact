@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="./src/assets/logo.svg" alt="Podcastr logo" style='width: 100px'>
+  
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### - Fui desafiado a fazer uma aplicação que faz uma requisição a API do Deezer e retorna a lista das músicas mais tocadas e que houvesse também, uma lista de músicas favoritos. 
+### - No projeto tive praticar bastante o Redux pois foi um requisito, e nele iremos encontrar 4 objetos:
+#### *allMusics : Nele é salvo o resultado da requisição feita na API do Deezer.
+#### *favoritList: Nele é salvo todas as músicas que forem selecionadas como favoritas.
+#### *selectedMusic: Quando uma música é selecionada, ela fica salva neste objeto.
+#### *isRequest: Nele possui um valor booleano onde é dito se a aplicação está fazendo requisição ou não.
 
-## Available Scripts
+### Tive muita satisfação em fazer este projeto, pois o mesmo me fez crescer profissionalmente :D
+### - Nesta aplicação foram usados as seguintes tecnologias:
 
-In the project directory, you can run:
+### *React JS
+### *Redux
+### *Styled Component
+### *Material UI
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Demonstração da aplicação
+![Tela inicial](./assets/gifs/show2.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Como visualizar aplicação em sua máquina:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 1º Passo: Instale o git, veja o passo a passo em https://git-scm.com/downloads
+#### 2º Passo: Intale o node, veja o passo a passo em https://nodejs.org/en/download/
+#### 3º Passo: Abra o terminal como admonistrador e execute o comando: ' git clone https://github.com/lucasmetron/desafioDeezerReact.git '
+#### 4º Passo: Digite o comando ' cd desafioDeezerReact ' para acessar a pasta do projeto
+#### 5º Passo: Digite o comando ' npm install ' e ao finalizar digite o comando ' npm start '
+#### 6º Passo: A API do Deezer possui restrições para requisições vinda de navegadores, por isso precisei utilizar a API do CORS Anywhere. Caso ao abrir a aplicação a lista de músicas não apareça, basta clicar no link que irá aparecer e clicar no botão 'Request temporary access to the demo server'. Feito isso basta voltar para página da aplicação e atualizar a página. 
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Gostou do meu projeto? :D Entre em contato comigo! 
+[Linkedin](https://www.linkedin.com/in/lucas-rosa-058683102/) <br/>
+[Email: lucasmetron@gmail.com](mailto:lucasmetron@gmail.com)
