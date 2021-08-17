@@ -50,9 +50,8 @@ export default function MusicFavoriteList(props) {
 
     const classesIcon = useStyle();
     const redux = useSelector(state => state)
-    const [favoritList, setFavoriteList] = useState('');
+    const [favoritList, setFavoriteList] = useState([]);
     const dispatch = useDispatch();
-    const [listLocal, setListLocal] = useState('');
     const [urlMusic, setUrlMusic] = useState('')
     const [alert, setAlert] = useState('none');
 
@@ -84,17 +83,16 @@ export default function MusicFavoriteList(props) {
         return `${result[0]}:${result[1]}`
     }
 
-    useEffect(() => {
-        // setFavoriteList(redux.favoritList)
-        // if (redux.favoritList.length <= 0 && localStorage.getItem('favoriteList') !== null) {
-        //     dispatch(addFavoriteList(JSON.parse(localStorage.getItem('favoriteList'))))
-        // }
+    // useEffect(() => {
+    //     if (redux.favoritList.length <= 0) {
+    //         let teste = JSON.parse(localStorage.getItem('favoriteList'))
+    //         console.log(teste)
+    //         setFavoriteList(teste)
+    //         console.log(favoritList)
+    //         // dispatch(addFavoriteList(teste)
+    //     }
 
-        // console.log(redux.favoritList.length)
-        // console.log(localStorage.getItem('favoriteList'))
-        // console.log(redux)
-
-    }, [])
+    // }, [])
 
     useEffect(() => {
         setFavoriteList(redux.favoritList)

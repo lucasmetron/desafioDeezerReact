@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addAllMusics } from '../../store/actions/musicsAction'
 import { start, finish } from '../../store/actions/isRequestAction'
 
+
 const useStyle = makeStyles(() => ({
     happy: {
         color: '#FFC037',
@@ -21,6 +22,8 @@ const useStyle = makeStyles(() => ({
     }
 
 }))
+
+
 
 
 export default function MostPlayed(props) {
@@ -50,7 +53,7 @@ export default function MostPlayed(props) {
 
     useEffect(() => {
         req();
-        console.log(redux)
+
     }, [])
 
 

@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAllMusics } from '../../store/actions/musicsAction';
+import { useEffect } from 'react';
+import { addFavoriteList } from '../../store/actions/favoriteListActions';
 
 const useStyles = makeStyles((theme) => ({
     inputSearch: {
@@ -1028,19 +1030,31 @@ export default function Search(props) {
     const dispatch = useDispatch();
     const redux = useSelector(state => state.allMusics)
     const [wordKey, setWordKey] = useState('')
+    const [copy, setCopy] = useState([''])
 
 
 
     function handleChange(event) {
         setWordKey(event.target.value)
-        let FilterList = objTeste.filter(musica => {
+        let FilterList = redux.filter(musica => {
             return musica.title.toLowerCase().includes(wordKey.toLowerCase())
         })
         dispatch(addAllMusics(FilterList))
 
-        // console.log(FilterList)
+        if (wordKey === '') {
+            dispatch(addFavoriteList(copy))
+            console.log('entrei no if')
+        }
+        console.log(wordKey)
+
         // console.log(redux)
     }
+
+
+    // useEffect(() => {
+    //     setCopy(redux)
+
+    // }, redux)
 
     return (
 

@@ -13,16 +13,15 @@ import {
     Erro,
     Listcontainer,
 } from './styled'
-
-import thumbtest from '../../assets/thumb.jpg'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Load from '../Loading/Load';
 import { addFavoriteList, removeFavoriteList } from '../../store/actions/favoriteListActions'
 import { selectedMusic } from '../../store/actions/selectedMusic'
+
 import Message from '../Message/Message';
-import { createRef } from 'react';
+
 
 
 const useStyle = makeStyles(() => ({
@@ -1064,6 +1063,8 @@ export default function MusicList(props) {
     const [alert, setAlert] = useState('none');
 
 
+
+
     useEffect(() => {
 
         if (redux.favoritList !== []) {
@@ -1071,16 +1072,18 @@ export default function MusicList(props) {
             // console.log(redux)
         }
 
+        localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
+
+        console.log(redux)
+
     }, [redux])
 
 
     function addFavoriteListOnRedux(music) {
-        localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
+
         dispatch(addFavoriteList(music))
         setAlert('flex')
-
         setTimeout(() => { setAlert('none') }, 1000)
-        console.log(redux)
     }
 
     function removeFavoriteListOnRedux() {
@@ -1162,7 +1165,7 @@ export default function MusicList(props) {
 
                         :
 
-                        <Erro > Erro 404 :/</Erro>
+                        <Erro > Lista vazia :/</Erro>
 
                     }
 
