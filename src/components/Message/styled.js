@@ -30,6 +30,7 @@ export const AlertMessage = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
     
     animation-name: ${aparece};
     animation-duration: 1s;

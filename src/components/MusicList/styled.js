@@ -1,44 +1,5 @@
 import styled from 'styled-components'
 
-export const MyTable = styled.table`
-    
-    *{
-        font-size: 1.5rem;
-        text-align: center;
-        overflow: auto;
-        color: #99989B;
-    }
-    width: 100%;
-    max-height: 200px;
-    overflow: auto;
-
-
-    tr{
-        transition: all ease 0.5s;
-        
-
-        &:hover{
-            background-color: #e7e7e7;
-        }
-    }
-
-    th{
-        position: sticky;
-        top:0;
-        padding: 0.8rem;
-        z-index: 2;
-        background-color: #8257E5;
-        color: white;
-        
-    }
-
-    td{
-        padding: 0.8rem;
-        cursor: pointer;
-       
-    }
-  
-    `;
 export const Container = styled.div`
     width: 100%;
     display: grid;
@@ -46,7 +7,6 @@ export const Container = styled.div`
     grid-template-rows: 1fr;
     align-content: center;
     justify-items: center;
-    
 
   
 `;
@@ -61,6 +21,10 @@ export const TitleList = styled.div`
     padding-bottom: 1rem;
     background: rgb(164,126,246);
     background: linear-gradient(90deg, rgba(164,126,246,1) 43%, rgba(118,76,209,1) 72%, rgba(72,45,134,1) 100%);
+
+        h2{
+            font-size: 1.8rem;
+        }
 `;
 
 export const Listcontainer = styled.div`
