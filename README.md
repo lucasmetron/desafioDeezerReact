@@ -29,7 +29,7 @@
 #### 2º Passo: Instale o node, veja o passo a passo em https://nodejs.org/en/download/
 #### 3º Passo: Abra o terminal como administrador e execute o comando: ' git clone https://github.com/lucasmetron/desafioDeezerReact.git '
 #### 4º Passo: Digite o comando ' cd desafioDeezerReact ' para acessar a pasta do projeto
-#### 5º Passo: Digite o comando ' npm install ' e ao finalizar digite o comando ' npm start ' (Se ao rodar npm start acontecer algum erro, insira o seguinte comando 'npm install react-scripts --save' e depois insira novamente o comando 'npm start' )
+#### 5º Passo: Digite o comando ' npm install ' e ao finalizar digite o comando ' npm start '
 #### 6º Passo: A API do Deezer possui restrições para requisições vinda de navegadores, por isso precisei utilizar a API do CORS Anywhere. Caso ao abrir a aplicação a lista de músicas não apareça, basta clicar no link que irá aparecer e clicar no botão 'Request temporary access to the demo server'. Feito isso, basta voltar para a aplicação e atualizar a página.
 
 
