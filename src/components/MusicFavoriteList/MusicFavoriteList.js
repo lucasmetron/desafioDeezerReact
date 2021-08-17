@@ -58,11 +58,12 @@ export default function MusicFavoriteList(props) {
     function removeMusicOnFavorite(id) {
 
         dispatch(removeFavoriteList(id))
+        let local = JSON.parse(localStorage.getItem('favoriteList'))
+        let localFilter = local.filter(item => item.id != id)
+        localStorage.setItem('favoriteList', JSON.stringify(localFilter))
         setUrlMusic('')
         setAlert('flex')
         setTimeout(() => { setAlert('none') }, 1000)
-        console.log(id)
-        console.log(redux)
     }
 
     function play(item) {
@@ -83,19 +84,21 @@ export default function MusicFavoriteList(props) {
         return `${result[0]}:${result[1]}`
     }
 
-    // useEffect(() => {
-    //     if (redux.favoritList.length <= 0) {
-    //         let teste = JSON.parse(localStorage.getItem('favoriteList'))
-    //         console.log(teste)
-    //         setFavoriteList(teste)
-    //         console.log(favoritList)
-    //         // dispatch(addFavoriteList(teste)
-    //     }
+    useEffect(() => {
+        if (redux.favoritList == '') {
+            let local = JSON.parse(localStorage.getItem('favoriteList'))
+            local.map(item => {
+                dispatch(addFavoriteList(item))
+            })
 
-    // }, [])
+
+            console.log(local)
+        }
+    }, [])
 
     useEffect(() => {
         setFavoriteList(redux.favoritList)
+        console.log(redux)
     }, [redux])
 
 

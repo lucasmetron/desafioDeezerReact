@@ -1072,7 +1072,7 @@ export default function MusicList(props) {
             // console.log(redux)
         }
 
-        localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
+
 
         console.log(redux)
 
@@ -1080,15 +1080,20 @@ export default function MusicList(props) {
 
 
     function addFavoriteListOnRedux(music) {
-
         dispatch(addFavoriteList(music))
         setAlert('flex')
         setTimeout(() => { setAlert('none') }, 1000)
     }
 
-    function removeFavoriteListOnRedux() {
+    async function saveLocal() {
+        if (redux.favoritList !== '') {
+            console.log(redux.favoritList.length === [''])
+            await localStorage.setItem('favoriteList', JSON.stringify(redux.favoritList))
+        }
 
     }
+
+    saveLocal()
 
     function play(item) {
         setUrlMusic(item.preview)
