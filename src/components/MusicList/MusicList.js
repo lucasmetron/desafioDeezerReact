@@ -1118,6 +1118,8 @@ export default function MusicList(props) {
         return `${result[0]}:${result[1]}`
     }
 
+    console.log(props.coisa)
+
     return (
 
         <Container>
@@ -1144,9 +1146,9 @@ export default function MusicList(props) {
 
                 <Listcontainer>
 
-                    {objTeste.length > 0 ?
+                    {allMusic.length > 0 ?
 
-                        objTeste.map((item) => {
+                        allMusic.map((item) => {
 
                             return (
                                 <List id={item.id} onClick={(() => { saveSelectedMusic(item) })}>

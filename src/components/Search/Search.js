@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addAllMusics } from '../../store/actions/musicsAction';
 import { useEffect } from 'react';
 import { addFavoriteList } from '../../store/actions/favoriteListActions';
+import MusicList from '../MusicList/MusicList';
 
 const useStyles = makeStyles((theme) => ({
     inputSearch: {
@@ -1031,38 +1032,49 @@ export default function Search(props) {
     const redux = useSelector(state => state.allMusics)
     const [wordKey, setWordKey] = useState('')
     const [copy, setCopy] = useState([''])
+    const teste = 'teste'
 
+    const [musicsFilter, setMusicsFilter] = useState([]);
+
+    // useEffect(() => {
+
+    //     setMusicsFilter(redux.filter(musica => {
+    //         return musica.title.toLowerCase().includes(wordKey.toLocaleLowerCase())
+    //     }))
+
+    //     console.log(wordKey)
+
+    // }, [wordKey])
 
 
     function handleChange(event) {
         setWordKey(event.target.value)
+    }
+
+    console.log(wordKey)
+
+    useEffect(() => {
         let FilterList = redux.filter(musica => {
             return musica.title.toLowerCase().includes(wordKey.toLowerCase())
         })
         dispatch(addAllMusics(FilterList))
 
-        if (wordKey === '') {
-            dispatch(addFavoriteList(copy))
+        if (wordKey == '') {
+            let oldList = JSON.parse(localStorage.getItem('allMusics'))
+            dispatch(addAllMusics(oldList))
             console.log('entrei no if')
+
         }
-        console.log(wordKey)
 
-        // console.log(redux)
-    }
-
-
-    // useEffect(() => {
-    //     setCopy(redux)
-
-    // }, redux)
+    }, [wordKey])
 
     return (
 
-        < Container >
+        < Container filter>
             <form className={classes.inputSearch} noValidate autoComplete="on">
                 <TextField id="standard-basic" label="Buscar" onChange={handleChange} value={wordKey} />
                 {/* <input type="text" value={busca} onChange={(event) => setBusca(event.target.value)} /> */}
-
+                {/* <MusicList list={musicsFilter} ></MusicList> */}
             </form>
         </Container >
 

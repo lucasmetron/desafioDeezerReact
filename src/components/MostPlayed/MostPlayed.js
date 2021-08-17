@@ -41,10 +41,12 @@ export default function MostPlayed(props) {
                 if (response) {
                     setMusics(response.data)
                     dispatch(addAllMusics(response.data.data))
+                    localStorage.setItem('allMusics', JSON.stringify(response.data.data))
                     dispatch(finish())
                 } else {
                     console.log('Não há resposta')
                 }
+
 
             })
             .catch(err => console.log(err))
